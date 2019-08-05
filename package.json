@@ -1,0 +1,19 @@
+{
+  "name": "vishneuski-home-angular",
+  "version": "1.0.0",
+  "description": "Typescript hometasks",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "author": "Siarhei Vishneuski",
+  "license": "ISC"
+}
