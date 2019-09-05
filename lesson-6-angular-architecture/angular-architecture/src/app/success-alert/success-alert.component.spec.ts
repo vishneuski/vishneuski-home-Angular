@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SuccessAlertComponent } from './success-alert.component';
+import {SuccessAlertComponent} from './success-alert.component';
 
 describe('SuccessAlertComponent', () => {
   let component: SuccessAlertComponent;
@@ -8,9 +8,9 @@ describe('SuccessAlertComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SuccessAlertComponent ]
+      declarations: [SuccessAlertComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

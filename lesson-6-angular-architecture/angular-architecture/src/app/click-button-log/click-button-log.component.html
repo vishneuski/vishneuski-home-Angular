@@ -1,3 +1,5 @@
 <button (click)="hideParagraph()">Show details</button>
-<p #ourParagraph [ngClass]="{invisible: visibility}" >Our paragraph</p>
-<p *ngFor="let item of clickArray" [ngClass]="{anotherColor: item.clickCounter > 4}" [ngStyle]= "{ backgroundColor: (item.clickCounter > 4 ? 'blue' : 'none')}" >Pressing number {{item.clickCounter}} is happened at {{item.time}}</p>
+<p #ourParagraph [ngClass]="{invisible: visibility}">Our paragraph</p>
+<p *ngFor="let item of clickArray" [ngClass]="{anotherColor: item.clickCounter > 4}"
+   [ngStyle]="{ backgroundColor: (item.clickCounter > 4 ? 'blue' : 'none')}">Pressing number {{item.clickCounter}} is
+  happened at {{item.time}}</p>
