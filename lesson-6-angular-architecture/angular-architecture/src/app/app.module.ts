@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { UserNameInputComponent } from './user-name-input/user-name-input.component';
+import { ClickButtonLogComponent } from './click-button-log/click-button-log.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SuccessAlertComponent,
     WarningAlertComponent,
-    UserNameInputComponent
+    UserNameInputComponent,
+    ClickButtonLogComponent
   ],
   imports: [
     BrowserModule,
