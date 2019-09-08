@@ -6,6 +6,8 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
   styleUrls: ['./timer-control.component.css']
 })
 export class TimerControlComponent implements OnInit {
+  startTitle = 'start';
+  stopTitle = 'stop';
 
   @Output()
   start: EventEmitter<any> = new EventEmitter();
