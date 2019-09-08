@@ -16,7 +16,6 @@ export class AppComponent {
       return this.val++; }, 1000);
   }
   stop() {
-    console.log(this.numArr);
     clearInterval(this.timer);
   }
 }

@@ -13,6 +13,6 @@ export class EvenComponent implements OnInit {
   ngOnInit() {
   }
   checkNum() {
-    return this.arr.filter((item) => (item % 2 === 0));
+    return this.arr.filter((item) => (item % 2 === 0 && item !== 0));
   }
 }
