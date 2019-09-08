@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'basic-functionality';
+  numArr = [];
+  val = 0;
+  timer: any;
+
+  start() {
+    this.timer = setInterval(() => {
+      this.numArr.push(this.val);
+      return this.val++; }, 1000);
+  }
+  stop() {
+    console.log(this.numArr);
+    clearInterval(this.timer);
+  }
 }
