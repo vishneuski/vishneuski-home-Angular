@@ -6,7 +6,6 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./even.component.css']
 })
 export class EvenComponent implements OnInit {
-  @Input() value;
   @Input() arr;
 
   constructor() { }
@@ -16,9 +15,4 @@ export class EvenComponent implements OnInit {
   checkNum() {
     return this.arr.filter((item) => (item % 2 === 0));
   }
-  // checkNum() {
-  //   if (this.value % 2 === 0) {
-  //     return `Even ${this.value}`;
-  //   }
-  // }
 }
