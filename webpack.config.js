@@ -1,7 +1,7 @@
 module.exports = {
-  entry: './src/app.ts',
+  entry: './src/app1.ts',
   output: {
-    filename: 'app.js',
+    filename: 'app1.js',
     path: __dirname + './dist',
   },
   resolve: {
