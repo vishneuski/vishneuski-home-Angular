@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { UsersService } from "../services/users.service";
-import { CounterService } from "../services/counter.service";
-import { User } from "../models/User";
+import {Component, OnInit} from '@angular/core';
+import {UsersService} from "../services/users.service";
+import {CounterService} from "../services/counter.service";
+import {User} from "../models/User";
 
 @Component({
   selector: 'app-active-users',
@@ -11,9 +11,18 @@ import { User } from "../models/User";
 })
 export class ActiveUsersComponent implements OnInit {
 
-  constructor() { }
+  users: User[];
+  activeUsers: User[];
 
-  ngOnInit() {
+  constructor(private userService: UsersService) {
   }
 
+  ngOnInit() {
+    this.users = this.userService.getData();
+  }
+
+  showActiveUsers() {
+    this.activeUsers = this.userService.showActiveUsers();
+    console.log(this.activeUsers);
+  }
 }

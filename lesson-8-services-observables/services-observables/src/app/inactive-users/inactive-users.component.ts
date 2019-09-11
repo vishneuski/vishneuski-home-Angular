@@ -12,7 +12,6 @@ import {User} from "../models/User";
 export class InactiveUsersComponent implements OnInit {
 
   users: User[];
-  activeUsers: User[];
   inactiveUsers: User[];
 
   constructor(private userService: UsersService) {
@@ -26,10 +25,4 @@ export class InactiveUsersComponent implements OnInit {
     this.inactiveUsers = this.userService.showInactiveUsers();
     console.log(this.inactiveUsers);
   }
-
-  showActiveUsers() {
-    this.userService.showActiveUsers();
-  }
-
 }
-
