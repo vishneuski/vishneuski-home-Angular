@@ -6,7 +6,7 @@ import {Injectable} from '@angular/core';
 export class CounterService {
   counter = 0;
 
-  count(item: string) {
+  countChanges(item: string) {
     this.counter++;
     console.log(item, this.counter);
   }

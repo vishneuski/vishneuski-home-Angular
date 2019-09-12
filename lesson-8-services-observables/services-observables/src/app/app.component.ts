@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {User} from './models/User';
 import {UsersService} from "./services/users.service";
-import {CounterService} from "./services/counter.service";
 
 @Component({
   selector: 'app-root',

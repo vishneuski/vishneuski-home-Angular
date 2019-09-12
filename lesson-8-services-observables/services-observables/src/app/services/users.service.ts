@@ -1,13 +1,14 @@
 import {Injectable} from '@angular/core';
 import {User} from "../models/User";
-import { CounterService} from "./counter.service";
+import {CounterService} from "./counter.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  constructor(private counterService: CounterService) {}
+  constructor(private counterService: CounterService) {
+  }
 
   users: User[] = [{
     name: 'Alex',
@@ -28,18 +29,18 @@ export class UsersService {
   }
 
   changeToInactiveStatus(event: User) {
-    this.counterService.count('Change status to Inactive');
+    this.counterService.countChanges('Change status to Inactive');
     for (let user of this.users) {
-      if (user.name === event.name) {
+      if (user.status === true) {
         user.status = !user.status;
       }
     }
   }
 
   changeToActiveStatus(event: User) {
-    this.counterService.count('Change status to Active');
+    this.counterService.countChanges('Change status to Active');
     for (let user of this.users) {
-      if (user.name === event.name) {
+      if (user.status === false) {
         user.status = !user.status;
       }
     }
