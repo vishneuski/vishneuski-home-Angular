@@ -1,2 +1,15 @@
-<app-active-users></app-active-users>
-<app-inactive-users></app-inactive-users>
+<h3>Inactive Users</h3>
+<app-inactive-users
+  *ngFor="let user of users;"
+  [detail]='user'
+  (change)='changeStatus($event)'
+>
+</app-inactive-users>
+<h3>Active Users</h3>
+<app-active-users
+  *ngFor="let user of users;"
+  [detail]='user'
+  (change)='changeStatus($event)'
+>
+
+</app-active-users>

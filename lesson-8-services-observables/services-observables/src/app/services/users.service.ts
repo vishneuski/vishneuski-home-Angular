@@ -5,8 +5,7 @@ import {User} from "../models/User";
   providedIn: 'root'
 })
 export class UsersService {
-
-  private users: User[] = [{
+  users: User[] = [{
     name: 'Alex',
     status: true
   }, {
@@ -37,9 +36,4 @@ export class UsersService {
       return item.status !== false
     })
   }
-
-  // changeStatus() {
-  //   this._users[status] = !this._users[status];
-  // }
-
 }

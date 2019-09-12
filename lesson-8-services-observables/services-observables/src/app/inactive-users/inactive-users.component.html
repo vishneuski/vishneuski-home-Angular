@@ -1,5 +1,5 @@
-<h3>Inactive Users</h3>
-<div *ngFor="let user of inactiveUsers">{{user.name}}
-<button>set to active</button>
+<div *ngIf="detail.status === false">{{detail.name}}
+<button (click)="onChange()">
+  set to active
+</button>
 </div>
-<span *ngIf="users.length">{{showInactiveUsers()}}</span>

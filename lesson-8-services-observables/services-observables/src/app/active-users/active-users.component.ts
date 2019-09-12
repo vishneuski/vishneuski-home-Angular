@@ -1,28 +1,20 @@
-import {Component, OnInit} from '@angular/core';
-import {UsersService} from "../services/users.service";
-import {CounterService} from "../services/counter.service";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {User} from "../models/User";
 
 @Component({
   selector: 'app-active-users',
   templateUrl: './active-users.component.html',
   styleUrls: ['./active-users.component.css'],
-  providers: [UsersService, CounterService]
 })
-export class ActiveUsersComponent implements OnInit {
+export class ActiveUsersComponent {
 
-  users: User[];
-  activeUsers: User[];
+  @Input()
+  detail: User;
 
-  constructor(private userService: UsersService) {
-  }
+  @Output()
+  change: EventEmitter<any> = new EventEmitter();
 
-  ngOnInit() {
-    this.users = this.userService.getData();
-  }
-
-  showActiveUsers() {
-    this.activeUsers = this.userService.showActiveUsers();
-    console.log(this.activeUsers);
+  onChange() {
+    this.change.emit(this.detail);
   }
 }
