@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {User} from "../models/User";
 
 @Component({
@@ -14,7 +14,7 @@ export class ActiveUsersComponent {
   @Output()
   change: EventEmitter<any> = new EventEmitter();
 
-  onChange() {
+  onInactiveChange() {
     this.change.emit(this.detail);
   }
 }

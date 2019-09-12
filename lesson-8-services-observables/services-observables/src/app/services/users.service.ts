@@ -20,20 +20,22 @@ export class UsersService {
   }];
 
   getData(): User[] {
-    console.log(this.users);
     return this.users;
   }
 
-  showInactiveUsers() {
-    return this.users.filter((item: User) => {
-      console.log(item);
-      return item.status === false
-    })
+  changeToInactiveStatus(event: User) {
+    for (let user of this.users) {
+      if (user.name === event.name) {
+        user.status = !user.status;
+      }
+    }
   }
 
-  showActiveUsers() {
-    return this.users.filter((item: User) => {
-      return item.status !== false
-    })
+  changeToActiveStatus(event: User) {
+    for (let user of this.users) {
+      if (user.name === event.name) {
+        user.status = !user.status;
+      }
+    }
   }
 }

@@ -14,7 +14,7 @@ export class InactiveUsersComponent {
   @Output()
   change: EventEmitter<any> = new EventEmitter();
 
-  onChange() {
+  onActiveChange() {
     this.change.emit(this.detail);
   }
 }
