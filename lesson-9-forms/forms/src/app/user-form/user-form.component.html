@@ -7,7 +7,13 @@
       <input
         type="text"
         name="userName"
+        required
+        #userName="ngModel"
         [ngModel]="user?.userName">
+      {{userName.errors | json}}
+      <div *ngIf="userName.errors?.required && userName.dirty" class="error">
+
+      </div>
     </div>
     <input type="button" value="Suggest an user name">
     <div>
@@ -15,25 +21,58 @@
       <input
         type="text"
         name="email"
-        [ngModel]="user?.mail">
+        [ngModel]="user?.mail"
+        required
+      >
     </div>
   </fieldset>
   <div>
-    Secret question
+    <label for="secret">Secret question</label>
     <select [ngModel]="user?.secret"
-            name="secret">
+            id="secret"
+            name="secret"
+            required
+    >
       <option *ngFor="let item of secrets">{{item}}</option>
     </select>
   </div>
   <div>
-    <textarea [ngModel]="user?.questionAnswer" name="answer" cols="30" rows="10">
-
+    <textarea [ngModel]="user?.questionAnswer"
+              name="answer"
+              cols="30"
+              rows="10"
+              required
+    >
     </textarea>
   </div>
   <div>
     You reply: {{form.value.answer}}
   </div>
   <div>
+    <input type="radio"
+           name="gender"
+           value="male"
+           [ngModel]="user?.gender"
+           required
+    >
+    Male
+  </div>
+  <div>
+    <input type="radio"
+           name="gender"
+           value="female"
+           [ngModel]="user?.gender"
+           required
+    >
+    Female
+  </div>
+  <div>
+    <button type="submit"
+            name="submit"
+            [disabled]="!form.form.valid"
+    >
+      Submit
+    </button>
 
   </div>
   <hr>
