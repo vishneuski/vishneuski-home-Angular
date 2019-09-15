@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {User} from "../model/user";
 import {UserFormService} from "../services/user-form.service";
 
@@ -9,13 +9,20 @@ import {UserFormService} from "../services/user-form.service";
 })
 export class UserFormComponent implements OnInit {
   user: User;
-  secrets: string[];
+
+  @Output()
+  sendData: EventEmitter<User> = new EventEmitter<User>();
+
+  submitData(user: User, isValid: boolean) {
+    if (isValid)
+      this.sendData.emit(user);
+      this.form.reset();
+  }
 
   constructor(private userService: UserFormService) {
   }
 
   ngOnInit() {
     this.user = this.userService.getUser();
-    this.secrets = this.userService.secrets;
   }
 }

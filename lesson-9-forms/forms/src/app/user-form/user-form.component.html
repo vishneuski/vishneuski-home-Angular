@@ -1,49 +1,61 @@
-<form #form="ngForm">
-  {{user | json}}
+<form #form="ngForm" (ngSubmit)="submitData(form.value, form.valid)">
   <fieldset>
     <legend>User Data</legend>
-    <div>
-      User name
-      <input
-        type="text"
-        name="userName"
-        required
-        #userName="ngModel"
-        [ngModel]="user?.userName">
-      {{userName.errors | json}}
-      <div *ngIf="userName.errors?.required && userName.dirty" class="error">
-
+    <div ngModelGroup="userData"
+         #userData="ngModelGroup">
+      <div>
+        User name
+        <input type="text"
+               name="userName"
+               required
+               #userNameControl="ngModel"
+               [ngModel]="user?.userName">
+        <div *ngIf="userNameControl.invalid && userNameControl.touched" class="error">
+          User name is required
+        </div>
       </div>
-    </div>
-    <input type="button" value="Suggest an user name">
-    <div>
-      User mail
-      <input
-        type="text"
-        name="email"
-        [ngModel]="user?.mail"
-        required
-      >
+      <button type="button">Suggest an user name</button>
+      <div>
+        User mail
+        <input type="text"
+               name="email"
+               [ngModel]="user?.mail"
+               required
+               #userMailControl="ngModel">
+        <div *ngIf="userMailControl.invalid && userMailControl.touched" class="error">
+          User mail is required
+        </div>
+      </div>
+      <div *ngIf="userData.invalid && userData.touched" class="error">
+        User data invalid!
+      </div>
     </div>
   </fieldset>
   <div>
-    <label for="secret">Secret question</label>
+    <label for="secret">Secret question </label>
     <select [ngModel]="user?.secret"
             id="secret"
             name="secret"
             required
     >
-      <option *ngFor="let item of secrets">{{item}}</option>
+      <option *ngFor="let item of user?.secret"
+              [value]="item">
+        {{item}}
+      </option>
     </select>
   </div>
   <div>
     <textarea [ngModel]="user?.questionAnswer"
               name="answer"
-              cols="30"
-              rows="10"
+              cols="20"
+              rows="5"
               required
+              #answer="ngModel"
     >
     </textarea>
+    <div *ngIf="answer.invalid && answer.touched" class="error">
+      You don't answer the question!
+    </div>
   </div>
   <div>
     You reply: {{form.value.answer}}
@@ -69,7 +81,7 @@
   <div>
     <button type="submit"
             name="submit"
-            [disabled]="!form.form.valid"
+            [disabled]="!form.valid"
     >
       Submit
     </button>

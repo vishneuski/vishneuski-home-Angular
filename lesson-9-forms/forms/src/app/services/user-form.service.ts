@@ -6,12 +6,12 @@ import {User} from "../model/user";
 })
 export class UserFormService {
 
-  secrets: string[] = ['What is your mother last name?', 'What is your dog name?', 'What is your English level'];
-
   user: User = {
-    userName: '',
-    mail: '',
-    secret: this.secrets[0],
+    userData: {
+      userName: '',
+      mail: '',
+    },
+    secret: ['What is your mom\'s maiden name?', 'What is your dog name?', 'What is your English level'],
     questionAnswer: '',
     gender: ''
   };
