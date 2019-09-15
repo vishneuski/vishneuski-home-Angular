@@ -1,0 +1,41 @@
+<form #form="ngForm">
+  {{user | json}}
+  <fieldset>
+    <legend>User Data</legend>
+    <div>
+      User name
+      <input
+        type="text"
+        name="userName"
+        [ngModel]="user?.userName">
+    </div>
+    <input type="button" value="Suggest an user name">
+    <div>
+      User mail
+      <input
+        type="text"
+        name="email"
+        [ngModel]="user?.mail">
+    </div>
+  </fieldset>
+  <div>
+    Secret question
+    <select [ngModel]="user?.secret"
+            name="secret">
+      <option *ngFor="let item of secrets">{{item}}</option>
+    </select>
+  </div>
+  <div>
+    <textarea [ngModel]="user?.questionAnswer" name="answer" cols="30" rows="10">
+
+    </textarea>
+  </div>
+  <div>
+    You reply: {{form.value.answer}}
+  </div>
+  <div>
+
+  </div>
+  <hr>
+  {{form.value | json}}
+</form>
