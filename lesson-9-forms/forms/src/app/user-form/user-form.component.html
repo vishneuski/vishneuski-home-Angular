@@ -14,7 +14,7 @@
           User name is required
         </div>
       </div>
-      <button type="button">Suggest an user name</button>
+      <button type="button" (click)="nameSuggest()">Suggest an user name</button>
       <div>
         User mail
         <input type="text"
@@ -36,10 +36,9 @@
     <select [ngModel]="user?.secret"
             id="secret"
             name="secret"
-            required
-    >
+            required>
       <option *ngFor="let item of user?.secret"
-              [value]="item">
+              [selected]="user?.secret[0]">
         {{item}}
       </option>
     </select>
@@ -50,8 +49,7 @@
               cols="20"
               rows="5"
               required
-              #answer="ngModel"
-    >
+              #answer="ngModel">
     </textarea>
     <div *ngIf="answer.invalid && answer.touched" class="error">
       You don't answer the question!
@@ -60,32 +58,28 @@
   <div>
     You reply: {{form.value.answer}}
   </div>
+  <input type="radio"
+         name="gender"
+         value="male"
+         required
+         [ngModel]="user?.gender">
   <div>
-    <input type="radio"
-           name="gender"
-           value="male"
-           [ngModel]="user?.gender"
-           required
-    >
     Male
   </div>
   <div>
     <input type="radio"
            name="gender"
            value="female"
-           [ngModel]="user?.gender"
            required
-    >
+           [ngModel]="user?.gender">
     Female
   </div>
   <div>
     <button type="submit"
             name="submit"
-            [disabled]="!form.valid"
-    >
+            [disabled]="!form.valid">
       Submit
     </button>
-
   </div>
   <hr>
   {{form.value | json}}

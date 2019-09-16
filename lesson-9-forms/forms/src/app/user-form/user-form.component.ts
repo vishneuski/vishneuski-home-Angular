@@ -16,7 +16,6 @@ export class UserFormComponent implements OnInit {
   submitData(user: User, isValid: boolean) {
     if (isValid)
       this.sendData.emit(user);
-      this.form.reset();
   }
 
   constructor(private userService: UserFormService) {
@@ -24,5 +23,9 @@ export class UserFormComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userService.getUser();
+  }
+
+  nameSuggest() {
+    this.user.userData.userName = 'User';
   }
 }
