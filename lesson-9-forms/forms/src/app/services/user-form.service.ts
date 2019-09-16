@@ -19,4 +19,8 @@ export class UserFormService {
   getUser(): User {
     return this.user;
   }
+
+  setUserName() {
+    this.user.userData.userName = 'User';
+  }
 }

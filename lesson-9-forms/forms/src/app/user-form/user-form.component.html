@@ -2,7 +2,7 @@
   <fieldset>
     <legend>User Data</legend>
     <div ngModelGroup="userData"
-         #userData="ngModelGroup">
+         #userInfo="ngModelGroup">
       <div>
         User name
         <input type="text"
@@ -26,7 +26,7 @@
           User mail is required
         </div>
       </div>
-      <div *ngIf="userData.invalid && userData.touched" class="error">
+      <div *ngIf="userInfo.invalid && userInfo.touched" class="error">
         User data invalid!
       </div>
     </div>
@@ -38,7 +38,7 @@
             name="secret"
             required>
       <option *ngFor="let item of user?.secret"
-              [selected]="user?.secret[0]">
+              [selected]="user.secret[1]">
         {{item}}
       </option>
     </select>

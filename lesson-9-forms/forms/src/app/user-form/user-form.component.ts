@@ -13,11 +13,6 @@ export class UserFormComponent implements OnInit {
   @Output()
   sendData: EventEmitter<User> = new EventEmitter<User>();
 
-  submitData(user: User, isValid: boolean) {
-    if (isValid)
-      this.sendData.emit(user);
-  }
-
   constructor(private userService: UserFormService) {
   }
 
@@ -26,6 +21,13 @@ export class UserFormComponent implements OnInit {
   }
 
   nameSuggest() {
-    this.user.userData.userName = 'User';
+    this.userService.setUserName();
+  }
+
+  submitData(user: User, isValid: boolean) {
+    if (isValid)
+      console.log(user);
+      console.log(isValid);
+    this.sendData.emit(user);
   }
 }
