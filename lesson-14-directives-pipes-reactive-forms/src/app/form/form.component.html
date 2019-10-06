@@ -1,0 +1,35 @@
+<form [formGroup]='myForm' (ngSubmit)=submit()>
+	<div formGroupName="projectForm">
+		<p>
+			Project name
+			<input type="text"
+             formControlName="projectName"
+             placeholder="Project name">
+    </p>
+			<div *ngIf="myForm.controls.errors?.isProjectNameAvailable">
+				Input another project name
+			</div>
+			<p>
+				Mail
+				<input type="text"
+             formControlName="mail"
+             placeholder="Mail">
+    </p>
+				<p>
+					Project status
+					<select formControlName="projectStatus">
+        <option value="" disabled selected>Select status</option>
+        <option *ngFor="let item of statuses"
+                [value]="item.id">
+           {{item.name}}
+        </option>
+      </select>
+				</p>
+	</div>
+	<div>
+		<button type="submit"
+            [disabled]="myForm.invalid">
+      Submit
+    </button>
+	</div>
+</form>
