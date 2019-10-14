@@ -7,3 +7,9 @@
   width: 70vw;
   margin: 0 auto;
 }
+
+.logList {
+  width: 80%;
+  margin: 1em auto 0;
+  background-color: lavender;
+}

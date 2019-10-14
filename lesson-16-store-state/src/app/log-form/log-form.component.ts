@@ -12,12 +12,13 @@ export class LogFormComponent implements OnInit {
 
   logForm: FormGroup;
 
-  constructor(private logService: LogService) {}
+  constructor(private logService: LogService) {
+  }
 
   ngOnInit() {
     this.logForm = new FormGroup({
-        logName: new FormControl(null, Validators.required)
-      }
+          logName: new FormControl(null, Validators.required)
+        }
     );
   }
 
