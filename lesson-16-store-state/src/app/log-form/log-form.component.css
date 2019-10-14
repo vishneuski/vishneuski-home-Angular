@@ -1,0 +1,24 @@
+.logInput {
+  width: 100%;
+  height: 2em;
+  border-radius: 0.25em;
+}
+
+.logButton {
+  width: 5em;
+  height: 2.5em;
+  margin: 0 0 1em 1em;
+  background-color: lightblue;
+  border-radius: 0.25em;
+}
+
+.inputWrapper {
+  box-sizing: border-box;
+  padding: 1em;
+}
+
+.logWrapper {
+  width: 70vw;
+  margin: 0 auto;
+  border: 1px solid gray;
+}

@@ -1,0 +1,20 @@
+<form [formGroup]="logForm"
+      (ngSubmit)="onSubmit(logForm.value)"
+      class="logForm">
+
+  <div class="logWrapper">
+    <div class="inputWrapper">
+    <input type="text"
+           formControlName="logName"
+           placeholder="Add a log"
+           class="logInput">
+    </div>
+    <div>
+      <button type="submit"
+              [disabled]="!logForm.valid"
+              class="logButton">
+        Add log
+      </button>
+    </div>
+  </div>
+</form>
