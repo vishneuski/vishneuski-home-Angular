@@ -1,0 +1,15 @@
+<div class="container" *ngFor="let log of logs">
+  <div>
+    <ul class="list-group">
+      <li class="list-group-item-secondary list-group-item d-flex justify-content-between align-items-center">
+        {{log.text}}
+        {{log.date}}
+        <button class="btn btn-danger" (click)="onDelete(log)">Delete</button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div *ngIf="logs.length == 0">
+<h5>There are no logs in the system</h5>
+</div>
