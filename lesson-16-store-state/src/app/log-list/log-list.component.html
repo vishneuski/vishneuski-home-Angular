@@ -1,0 +1,6 @@
+<div *ngIf="!logs" class="logWrapper">
+  There are no log in the system
+</div>
+<div *ngFor="let log of logs" class="logList">
+  <p (click)=changeLog(log)>{{log.logName}}</p>
+</div>
